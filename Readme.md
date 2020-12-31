@@ -2,7 +2,7 @@
 
 react-hidden-easter-egg is a react base component that allow you to add easter egg, that will trigger after user typing the secret code.
 
-codesandbox demo -> [Demo](https://codesandbox.io/s/react-hidden-easter-egg-l104s)
+codesandbox demo -> [Demo](https://codesandbox.io/s/react-hidden-easter-egg-l104s) and [advance example] (https://9leb2.csb.app/)
 ## Installation
 
 Use the package manager [npm](https://www.npmjs.com/package/react-hidden-easter-egg) to install .
