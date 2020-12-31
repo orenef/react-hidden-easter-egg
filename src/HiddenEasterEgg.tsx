@@ -25,7 +25,6 @@ export const HiddenEasterEgg: React.FC<Props> = ({
 
 	React.useEffect(() => {
 		function onKeyDown(e: KeyboardEvent) {
-			console.log('type:', e.key);
 			let attr = '';
 			switch (codeMode) {
 				case 'KEY':

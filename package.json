@@ -1,6 +1,6 @@
 {
   "name": "react-hidden-easter-egg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React component for adding easter egg to your application, with zero description!",
   "main": "build/index.js",
   "module": "build/index.es.js",
