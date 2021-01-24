@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.css';
 
-type CodeMode = 'KEYCODE' | 'KEY'; // KEYCODE is deprecated 
+type CodeMode = 'KEYCODE' | 'KEY' | 'MOBILE_CLICK'; // KEYCODE is deprecated 
 
 interface Props {
 	cb?: () => void | undefined; // function to invoke when code is enter
@@ -22,7 +22,8 @@ export const HiddenEasterEgg: React.FC<Props> = ({
 	const [hide, setHide] = React.useState(true);
 	const indexRef =  React.useRef(index);
 	indexRef.current = index;
-
+	let clickCount = 0;
+	let clicksCode = '';
 	React.useEffect(() => {
 		function onKeyDown(e: KeyboardEvent) {
 			let attr = '';
@@ -53,11 +54,38 @@ export const HiddenEasterEgg: React.FC<Props> = ({
 			} else {
 				setIndex(0);
 			}
-		}
-	
+		};
+		function clicks() {
+			clickCount++;
+			if(clickCount === 1) {
+				setTimeout(() => {
+					if(clickCount === 1) {
+					clicksCode = `${clicksCode}1`;
+					} else {
+					clicksCode = `${clicksCode}2`;
+					}
+					if (clicksCode === code.join('')){
+						cb && cb(); // trigger the easter-egg call back.
+						setHide(false);
+						if (resetEggMs) {
+							setTimeout(() => {
+								setHide(true);
+							}, resetEggMs);
+						}
+					} else {
+						if (!code.join('').startsWith(clicksCode)) {
+							clicksCode = '';
+						}
+					}
+					clickCount = 0;
+				}, 300);
+			}
+		};	  
+		codeMode === 'MOBILE_CLICK' && document.addEventListener('click', clicks);
 		document.addEventListener('keydown', onKeyDown);
 		return () => {
 		  document.removeEventListener('keydown', onKeyDown);
+		  document.removeEventListener('click', clicks);
 		}
 	},[]);
 

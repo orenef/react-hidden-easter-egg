@@ -27,13 +27,29 @@ export default function App() {
     </div>
   );
 }
+
+// mobile example
+// In MOBILE_CLICK mode, 1 - click , 2 - double click
+import React from "react";
+import { HiddenEasterEgg } from "react-hidden-easter-egg";
+
+export default function AppMobile() {
+  return (
+    <div className="App">
+        <h1 style={{ top: '50%', left: "50%", position: 'absolute' }}> react-hidden-easter-egg !!! </h1>
+          <HiddenEasterEgg code={[1, 2, 1]} codeMode="MOBILE_CLICK" resetEggMs={10000} cb={() => console.log('finish')}>
+            wow !
+          </HiddenEasterEgg>,
+    </div>
+  );
+}
 ```
 
 props | type | default value | info
 --- | --- | --- | ---
 cb | `function` or `undefined` | undefined | Callback function that will trigger when user type the code.
 code | `string[]` or `number[]` | konami code (['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a']) | The code use to trigger callback function or show hidden component.
-codeMode | `"key"` or `"keyCode"` | "key" | Code mode used to detect user typing (notice keycode is deprecated for some browsers)
+codeMode | `"key"` or `"keyCode"` or `"MOBILE_CLICK"` | "key" | Code mode used to detect user typing (notice keycode is deprecated for some browsers).
 children | `any` | undefined | children to render in case code is enter
 resetEggMs | `number` | 0 | In case you want 'children' to re-hide after a few millisecond use this props. 
 

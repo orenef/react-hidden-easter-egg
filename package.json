@@ -1,13 +1,13 @@
 {
   "name": "react-hidden-easter-egg",
-  "version": "1.0.3",
-  "description": "React component for adding easter egg to your application, with zero description!",
+  "version": "1.0.5",
+  "description": "React component for adding easter egg to your application, with zero dependencies!",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "keywords": ["react", "easter", "egg", "konami"],
   "homepage": "https://github.com/orenef/react-hidden-easter-egg",
   "scripts": {
-    "start": "parcel --out-dir playground-build ./src/playground/index.html",
+    "start": "parcel --port 3002 --out-dir playground-build ./src/playground/index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup --config"
   },
