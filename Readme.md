@@ -1,5 +1,7 @@
 # react-hidden-easter-egg
 
+![npm](https://img.shields.io/npm/dt/react-hidden-easter-egg) ![npm bundle size](https://img.shields.io/bundlephobia/min/react-hidden-easter-egg) ![NPM](https://img.shields.io/npm/l/react-hidden-easter-egg)
+
 react-hidden-easter-egg is a react base component that allow you to add easter egg, that will trigger after user typing the secret code.
 
 codesandbox demo -> [Demo](https://codesandbox.io/s/react-hidden-easter-egg-l104s) and [advance example](https://9leb2.csb.app/)
@@ -58,4 +60,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[ISC](https://choosealicense.com/licenses/isc/)
